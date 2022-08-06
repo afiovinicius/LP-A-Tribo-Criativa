@@ -1,0 +1,84 @@
+footer {
+  padding: 3.2rem 0rem;
+  background: linear-gradient(200.64deg, #141414 26.41%, #191919 107.75%);
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    background: url(../assets/details_line_dark.svg) no-repeat center/cover;
+    width: 96%;
+    max-width: 139.2rem;
+    height: 14.8rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .container {
+    z-index: 5;
+    @include flex(row, wrap, center, space-between);
+    .logo {
+      max-width: 11.2rem;
+      height: 6.4rem;
+    }
+    p {
+      color: $neutral-color-high-pure;
+      text-align: center;
+      width: 100%;
+      max-width: 52rem;
+    }
+    .btns_smtop {
+      width: 13.2rem;
+      @include flex(row, wrap, center, space-between);
+      gap: 1rem;
+      .link_ft {
+        width: 5.8rem;
+        height: 5.8rem;
+        padding: 1.2rem;
+        background: $neutral-color-low-dark;
+        transition: all 0.3s ease-in;
+        .icon_ft {
+          width: 3.2rem;
+          height: 3.2rem;
+        }
+        &:nth-child(1n) {
+          transform: rotate(3deg);
+        }
+        &:nth-child(2n) {
+          transform: rotate(-2deg);
+        }
+        &:nth-child(3n) {
+          transform: rotate(-2.5deg);
+        }
+        &:nth-child(4n) {
+          transform: rotate(5deg);
+        }
+        &:hover {
+          cursor: pointer;
+          transform: rotate(0);
+          background: $brand-color-primary-medium;
+          transition: all 0.3s ease-in;
+        }
+      }
+    }
+  }
+  @include responsive(1172px) {
+    .container {
+      p {
+        max-width: 46rem;
+      }
+    }
+  }
+  @include responsive(630px) {
+    .container {
+      justify-content: center;
+      gap: 3.6rem;
+      .logo {
+        max-width: 11.2rem;
+        height: 6.4rem;
+      }
+      .btns_smtop {
+        width: 100%;
+      }
+    }
+  }
+}

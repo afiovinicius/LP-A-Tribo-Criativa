@@ -31,7 +31,7 @@ function scrollToSoft(event) {
   const initLink = section.offsetTop;
 
   window.scrollTo({
-    top: initLink - 100,
+    top: initLink - 80,
     behavior: "smooth",
   });
 }

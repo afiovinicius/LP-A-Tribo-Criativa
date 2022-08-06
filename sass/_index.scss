@@ -114,14 +114,14 @@
 // Section Objective
 .objective {
   margin-top: 5.4rem;
-  padding: 5.2rem 2.4rem;
+  padding: 5.2rem 0rem;
   background: $brand-color-secondary-pure;
   position: relative;
   &::before {
     content: "";
     position: absolute;
     background: url(../assets/details_line_light.svg) no-repeat center/cover;
-    width: 80%;
+    width: 96%;
     max-width: 139.2rem;
     height: 14.8rem;
     top: 50%;
