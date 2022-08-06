@@ -1,0 +1,47 @@
+/* Índice
+
+  1 - Reset Global
+  2 - Html e Body
+  3 - Imagens
+
+*/
+
+// 1 - Reset Global
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  list-style: none;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  font-weight: normal;
+  font-family: "Sora", sans-serif;
+}
+
+// 2 - Html e Body
+html,
+body {
+  font-size: 62.5%;
+  background: $brand-color-primary-dark;
+  // Scroll Style
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: $brand-color-secondary-light transparent;
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $brand-color-secondary-light;
+    border-radius: 2rem;
+  }
+}
+
+// 3 - Imagens
+img {
+  display: block;
+  width: 100%;
+}

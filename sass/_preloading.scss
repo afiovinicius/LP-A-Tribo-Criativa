@@ -1,0 +1,75 @@
+.preloading {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  opacity: 1;
+  background: $brand-color-Primary-light;
+  animation: preloading 1.6s linear forwards;
+  @keyframes preloading {
+    0% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      z-index: -999;
+      display: none;
+      opacity: 0;
+    }
+  }
+  .container {
+    @include flex(column, nowrap, center, center);
+    height: 100%;
+    .logo {
+      max-width: 20rem;
+    }
+    .blob {
+      width: 20rem;
+      height: 112px;
+      display: grid;
+      padding: 11.2px;
+      &:before {
+        content: "";
+        grid-area: 1/1;
+        margin: 33.6px 0;
+        border-radius: 112px;
+        background: $brand-color-secondary-pure;
+      }
+      &:after {
+        content: "";
+        grid-area: 1/1;
+        width: 39.2px;
+        height: 39.2px;
+        margin: auto;
+        border-radius: 50%;
+        background: $brand-color-secondary-medium;
+        animation: blob-lwysv3md 1.6s infinite linear;
+      }
+    }
+    @keyframes blob-lwysv3md {
+      0% {
+        transform: translate(9rem);
+      }
+
+      25% {
+        transform: translate(0);
+      }
+
+      50% {
+        transform: translate(-9rem);
+      }
+
+      75% {
+        transform: translate(0);
+      }
+
+      100% {
+        transform: translate(9rem);
+      }
+    }
+  }
+}

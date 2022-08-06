@@ -1,0 +1,38 @@
+.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 2.4rem;
+  max-width: 30rem;
+  transition: all 0.3s linear;
+  &.-icon {
+    gap: 0.8rem;
+    img {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+  &.-solid {
+    color: $brand-color-Primary-pure;
+    background: $brand-color-secondary-pure;
+    &:hover {
+      background: $brand-color-secondary-light;
+    }
+    &:focus {
+      background: $brand-color-secondary-medium;
+    }
+  }
+  &.-undle {
+    color: $brand-color-secondary-pure;
+    text-decoration-line: underline;
+    &:hover {
+      background: hsla(45, 93%, 47%, 0.5);
+      text-decoration-line: none;
+    }
+    &:focus {
+      color: $neutral-color-high-pure;
+      background: $brand-color-secondary-pure;
+    }
+  }
+}

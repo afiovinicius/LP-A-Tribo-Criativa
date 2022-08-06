@@ -1,0 +1,162 @@
+header {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  height: 8rem;
+  width: 100%;
+  padding: 1.2rem 0rem;
+  background: $brand-color-primary-dark;
+  .container {
+    @include flex(row, wrap, center, space-between);
+    .logo {
+      height: 4rem;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    nav {
+      ._nav {
+        column-gap: 20rem;
+        @include flex(row, nowrap, center, center);
+        ul {
+          @include flex(row, nowrap, center, space-between);
+          li {
+            padding: 0.8rem 1.2rem;
+            transition: all 0.3s linear;
+            position: relative;
+            a {
+              color: $neutral-color-high-pure;
+            }
+            &:before {
+              content: "";
+              position: absolute;
+              width: 0;
+              height: 0.2rem;
+              left: 0;
+              bottom: 0;
+              transition: all 0.3s linear;
+              background: $brand-color-secondary-light;
+            }
+            &:hover {
+              cursor: pointer;
+              background: hsla(0, 0%, 100%, 0.3);
+              &:before {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @include responsive(1172px) {
+    .container {
+      nav {
+        .menu {
+          display: flex;
+          width: 4.4rem;
+          height: 4.4rem;
+          position: relative;
+          .m_hamburger {
+            width: 3rem;
+            height: 0.2rem;
+            left: 0.7rem;
+            top: 1rem;
+            position: absolute;
+            background: $neutral-color-high-pure;
+            transition: 0.4s linear;
+            &::before {
+              content: "";
+              position: absolute;
+              left: 0rem;
+              top: 1rem;
+              width: 3rem;
+              height: 0.2rem;
+              border-radius: 2rem;
+              background: $neutral-color-high-pure;
+              transition: 0.4s linear;
+            }
+            &::after {
+              content: "";
+              position: absolute;
+              top: 2.2rem;
+              left: 0;
+              width: 3rem;
+              height: 0.2rem;
+              border-radius: 2rem;
+              background: $neutral-color-high-pure;
+              transition: 0.4s linear;
+            }
+          }
+        }
+        ._nav {
+          display: none;
+          background: $brand-color-primary-dark;
+          margin: 0;
+          padding: 4.8rem;
+          position: absolute;
+          border-radius: 0.8rem;
+          column-gap: none;
+          animation: m_open 0.6s ease-in;
+          box-shadow: 0rem 0.4rem 0.8rem rgba(124, 133, 153, 0.16);
+          // animations
+          @keyframes m_open {
+            from {
+              top: 9rem;
+            }
+            to {
+              top: 10rem;
+            }
+          }
+          ul {
+            li {
+              &::after {
+                width: 4.8rem;
+                left: 50%;
+                transform: translate(-50%);
+              }
+            }
+          }
+        }
+        &.active {
+          .menu .m_hamburger {
+            width: 0;
+            height: 0;
+            &::before {
+              top: 1.2rem;
+              transform: rotate(-45deg);
+              transition: 0.4s linear;
+            }
+            &::after {
+              top: 1.2rem;
+              transform: rotate(45deg);
+              transition: 0.4s linear;
+            }
+          }
+          ._nav {
+            display: block;
+            top: 10rem;
+            right: 2rem;
+            z-index: 10;
+            ul {
+              flex-direction: column;
+              row-gap: 2.8rem;
+              margin-bottom: 8px;
+              li {
+                &:not(:last-child) {
+                  margin-right: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.bgOn {
+  transition: all 0.3s linear;
+  background: $neutral-color-low-dark;
+  border-bottom: 0.2rem solid $brand-color-secondary-dark;
+}

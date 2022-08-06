@@ -1,0 +1,550 @@
+// Section Hero
+.hero {
+  height: 100%;
+  margin-top: 8rem;
+  padding: 9.2rem 0rem;
+  background: url(../assets/bg_hero.png) no-repeat center center/cover;
+  .container {
+    @include flex(row, wrap, center, space-between);
+    .content {
+      width: 100%;
+      max-width: 57.2rem;
+      @include flex(column, nowrap, flex-start, center);
+      gap: 4rem;
+      .text_cta {
+        h1 {
+          color: $neutral-color-high-pure;
+          margin-bottom: 2.4rem;
+        }
+        b {
+          color: $brand-color-secondary-pure;
+        }
+        p {
+          color: $neutral-color-low-light;
+          margin-bottom: 3.2rem;
+        }
+      }
+      .partners {
+        p {
+          color: $neutral-color-high-pure;
+          margin-bottom: 1.2rem;
+        }
+        .p_logos {
+          @include flex(row, nowrap, center, center);
+          gap: 4rem;
+        }
+      }
+    }
+    .illust {
+      width: 59.4rem;
+      height: 52.6rem;
+      position: relative;
+      .phone {
+        z-index: 5;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+      }
+      .cube {
+        z-index: 2;
+        position: absolute;
+        width: 15.6rem;
+        height: 18rem;
+        left: 8.6rem;
+        top: 4.8rem;
+        filter: drop-shadow(0rem 0.9rem 2.3rem rgba(0, 0, 0, 0.5));
+        animation: pulseCube 2.5s ease-in-out infinite;
+      }
+      @keyframes pulseCube {
+        0% {
+          transform: rotate(-4.2deg);
+          transition-timing-function: cubic-bezier(0.7, 0, 0.27, 1);
+        }
+        50% {
+          transform: rotate(-22deg);
+          transition-timing-function: cubic-bezier(0.65, -0.01, 0.25, 0.99);
+        }
+        100% {
+          transform: rotate(-4.2deg);
+          transition-timing-function: cubic-bezier(0.7, 0, 0.27, 1);
+        }
+      }
+    }
+  }
+  @include responsive(1172px) {
+    .container {
+      justify-content: center;
+      gap: 3.2rem;
+      .content {
+        text-align: center;
+        align-items: center;
+        .btn {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  @include responsive(630px) {
+    .container {
+      flex-direction: column-reverse;
+      .content .text_cta {
+        h1,
+        b {
+          font-size: 3.2rem;
+        }
+        p {
+          font-size: 1.4rem;
+        }
+      }
+      .illust {
+        width: 100%;
+        height: 27.6rem;
+        .cube {
+          width: 9.6rem;
+          height: 10rem;
+          left: 6.4rem;
+          top: 3.6rem;
+        }
+      }
+    }
+  }
+}
+
+// Section Objective
+.objective {
+  margin-top: 5.4rem;
+  padding: 5.2rem 2.4rem;
+  background: $brand-color-secondary-pure;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    background: url(../assets/details_line_light.svg) no-repeat center/cover;
+    width: 80%;
+    max-width: 139.2rem;
+    height: 14.8rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5.4rem;
+    top: -5.4rem;
+    left: 0;
+    background: url(../assets/bar_yellow_tribo.svg) no-repeat center/cover;
+  }
+  .container {
+    h2 {
+      color: $neutral-color-low-dark;
+      text-align: center;
+      max-width: 69.6rem;
+      margin: 0 auto;
+    }
+  }
+  @include responsive(630px) {
+    margin-top: 3.2rem;
+    &::after {
+      height: 3.2rem;
+      top: -3.2rem;
+    }
+    .container h2 {
+      font-size: 1.6rem;
+      line-height: 120%;
+    }
+  }
+}
+
+// Section Benefit
+.benefit {
+  margin-top: 4.4rem;
+  .container {
+    @include flex(row, nowrap, center, space-between);
+    gap: 7rem;
+    .illust_benefit {
+      width: 64rem;
+      height: 59.6rem;
+      position: relative;
+      .tag_tribo {
+        z-index: 5;
+        position: absolute;
+        right: 4.6rem;
+        top: 3rem;
+        .ebox {
+          width: 15.4rem;
+          height: 15.4rem;
+          position: relative;
+          .circle {
+            z-index: 5;
+            position: absolute;
+            width: 12.4rem;
+            height: 12.4rem;
+            background: linear-gradient(
+              219.97deg,
+              #000000 12.7%,
+              rgba(0, 0, 0, 0) 83.08%
+            );
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50rem;
+            padding: 4.2rem 2.8rem;
+            .logo_t {
+              width: 6.6rem;
+              height: 3.8rem;
+            }
+          }
+          .textcircle {
+            z-index: 3;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0.25;
+            border-radius: 50rem;
+            animation: rotateText 12.5s linear infinite;
+          }
+          @keyframes rotateText {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(360deg);
+            }
+          }
+        }
+      }
+      .illust_discord {
+        position: absolute;
+        width: 86rem;
+        height: 59.5rem;
+        right: 0rem;
+        top: 0rem;
+      }
+    }
+    .text_cta {
+      width: 100%;
+      max-width: 59.2rem;
+      h2 {
+        color: $neutral-color-high-pure;
+        margin-bottom: 2.4rem;
+      }
+      b {
+        color: $highlight-color-pure;
+      }
+      p {
+        color: $neutral-color-low-light;
+        margin-bottom: 3.2rem;
+      }
+    }
+  }
+  @include responsive(1172px) {
+    .container {
+      flex-flow: column-reverse wrap;
+      justify-content: center;
+      gap: 2.4rem;
+      .illust_benefit,
+      .text_cta {
+        width: 100%;
+      }
+      .text_cta {
+        text-align: center;
+        .btn {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  @include responsive(630px) {
+    .container {
+      .illust_benefit {
+        width: 100%;
+        height: 31.2rem;
+        .tag_tribo {
+          right: 0;
+          top: 1.5rem;
+          .ebox {
+            width: 8rem;
+            height: 8rem;
+            .circle {
+              width: 6.4rem;
+              height: 6.4rem;
+              padding: 2.2rem 1.4rem;
+              .logo_t {
+                width: 3.6rem;
+                height: 2rem;
+              }
+            }
+            .textcircle {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+        .illust_discord {
+          width: 48rem;
+          height: 100%;
+          right: -1.6rem;
+        }
+      }
+      .text_cta {
+        h2 {
+          font-size: 2.4rem;
+          line-height: 120%;
+        }
+        p,
+        b {
+          font-size: 1.4rem;
+          line-height: 133%;
+        }
+      }
+    }
+  }
+}
+
+// Section Action
+.action {
+  margin-top: 4.4rem;
+  overflow: hidden;
+  .container {
+    @include flex(row, wrap, center, space-between);
+    .text_cta {
+      width: 100%;
+      max-width: 58.2rem;
+      h2 {
+        color: $neutral-color-high-pure;
+        margin-bottom: 2.4rem;
+        b {
+          color: $brand-color-secondary-pure;
+        }
+      }
+      p {
+        color: $neutral-color-low-light;
+        margin-bottom: 3.2rem;
+        b {
+          color: $highlight-color-pure;
+        }
+      }
+    }
+    .illust_action {
+      width: 58rem;
+      height: 67rem;
+      position: relative;
+      .illustaction {
+        position: absolute;
+        width: 130rem;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+  @include responsive(1172px) {
+    .container {
+      justify-content: center;
+      gap: 2.4rem;
+      .illust_action,
+      .text_cta {
+        width: 100%;
+      }
+      .illust_action {
+        height: 57rem;
+        .illustaction {
+          left: -4rem;
+        }
+      }
+      .text_cta {
+        text-align: center;
+        .btn {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  @include responsive(630px) {
+    .container {
+      .text_cta {
+        h2 {
+          font-size: 2.4rem;
+          line-height: 120%;
+          b {
+            font-size: 2.4rem;
+            line-height: 120%;
+          }
+        }
+        p,
+        b {
+          font-size: 1.4rem;
+          line-height: 133%;
+        }
+      }
+      .illust_action {
+        height: 40rem;
+        .illustaction {
+          left: -8rem;
+          width: 70rem;
+        }
+      }
+    }
+  }
+}
+
+// Section Events
+.events {
+  padding: 6rem 0rem;
+  background: linear-gradient(
+    82.87deg,
+    rgba(41, 41, 41, 0) 9.65%,
+    #191919 94.95%
+  );
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5.4rem;
+    bottom: -5.4rem;
+    left: 0;
+    background: url(../assets/bar_dark_tribo.svg) no-repeat center/cover;
+  }
+  .container {
+    @include flex(row, wrap, center, space-between);
+    .text_content {
+      @include flex(column, wrap, flex-start, flex-start);
+      gap: 2.4rem;
+      width: 100%;
+      max-width: 56rem;
+      h2 {
+        color: $neutral-color-high-pure;
+      }
+      p {
+        color: $neutral-color-low-light;
+      }
+      ul {
+        padding-left: 2rem;
+        li {
+          list-style: square;
+          color: $neutral-color-low-light;
+        }
+      }
+    }
+    .illust_brinde {
+      width: 100%;
+      max-width: 36.6rem;
+      height: 42.8rem;
+      position: relative;
+      background: url(../assets/illust_brinde.png) no-repeat center center/cover;
+      .card_brinde {
+        position: absolute;
+        @include flex(row, nowrap, center, flex-start);
+        padding: 1.6rem 2.2rem;
+        gap: 1rem;
+        max-width: 24rem;
+        background: $neutral-color-low-dark;
+        box-shadow: 0rem 11.1676rem 10.8952rem rgba(0, 0, 0, 0.23),
+          0rem 4.6656rem 4.5518rem rgba(0, 0, 0, 0.165337),
+          0rem 2.4944rem 2.4336rem rgba(0, 0, 0, 0.137105),
+          0rem 1.3984rem 1.3642rem rgba(0, 0, 0, 0.115),
+          0rem 0.7427rem 0.7245rem rgba(0, 0, 0, 0.0928953),
+          0rem 0.309rem 0.3015rem rgba(0, 0, 0, 0.0646635);
+        .icon_card {
+          width: 3.2rem;
+          height: 3.2rem;
+        }
+        p {
+          font-weight: bold;
+          font-size: 2.2rem;
+          line-height: 100%;
+          color: $neutral-color-high-pure;
+        }
+        &:nth-child(1n) {
+          left: 12.8rem;
+          top: 7rem;
+        }
+        &:nth-child(2n) {
+          left: 5.2rem;
+          top: 15.6rem;
+        }
+        &:nth-child(3n) {
+          left: 11.6rem;
+          top: 24.4rem;
+        }
+        &:nth-child(4n) {
+          left: 6rem;
+          top: 33rem;
+        }
+      }
+    }
+  }
+  @include responsive(1172px) {
+    .container {
+      justify-content: center;
+      gap: 2.4rem;
+      .text_content {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  }
+  @include responsive(630px) {
+    margin-top: 3.2rem;
+    &::after {
+      height: 3.2rem;
+      bottom: -3.2rem;
+    }
+    .container {
+      .text_content {
+        h2 {
+          font-size: 2.4rem;
+          line-height: 120%;
+        }
+        p,
+        li {
+          font-size: 1.4rem;
+          line-height: 133%;
+        }
+      }
+    }
+  }
+  @include responsive(480px) {
+    .container {
+      .illust_brinde {
+        height: 36.6rem;
+        background-size: contain;
+        .card_brinde {
+          max-width: 21rem;
+          .icon_card {
+            width: 2.8rem;
+            height: 2.8rem;
+          }
+          p {
+            font-size: 1.8rem;
+          }
+          &:nth-child(1n) {
+            left: 11rem;
+            top: 6rem;
+          }
+          &:nth-child(2n) {
+            left: 5rem;
+            top: 13rem;
+          }
+          &:nth-child(3n) {
+            left: 9rem;
+            top: 20rem;
+          }
+          &:nth-child(4n) {
+            left: 5rem;
+            top: 27rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Section Depoiments
+.depoiments {
+  margin-top: 5.4rem;
+}
