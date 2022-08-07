@@ -641,8 +641,8 @@
       }
       .slide_dp {
         &::before {
-        display: none;
-      }
+          display: none;
+        }
         .swiper-wrapper .swiper-slide {
           max-width: 100%;
         }
