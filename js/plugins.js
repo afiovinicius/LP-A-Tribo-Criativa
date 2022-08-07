@@ -83,3 +83,21 @@ ScrollReveal().reveal(".ef-flip", {
   scale: 0.1,
   easing: "ease",
 });
+
+// Swipper Slide
+var swiper = new Swiper(".slide_dp", {
+  slidesPerView: 1,
+  spaceBetween: 24,
+  slidesPerGroup: 1,
+  cssMode: true,
+  keyboard: true,
+  centeredSlides: true,
+  navigation: {
+    nextEl: ".btns_pagination .swiper-button-next",
+    prevEl: ".btns_pagination .swiper-button-prev",
+  },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: true,
+  },
+});
