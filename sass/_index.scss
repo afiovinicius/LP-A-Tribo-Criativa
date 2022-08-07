@@ -640,6 +640,9 @@
         }
       }
       .slide_dp {
+        &::before {
+        display: none;
+      }
         .swiper-wrapper .swiper-slide {
           max-width: 100%;
         }
